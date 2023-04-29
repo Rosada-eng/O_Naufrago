@@ -5,15 +5,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
 public class pause : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject GameOverMenuUI;
     public EventSystem eventSystem;
+
     void Start()
     {
         pauseMenuUI.SetActive(false);
+        GameOverMenuUI.SetActive(false);
     }
 
     private void Update(){
