@@ -14,12 +14,13 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((rb.position.x < -25) | (rb.position.x >50) | (rb.position.y < -15) | (rb.position.y > 65)) {
-        Destroy(gameObject);        }
+        // if ((rb.position.x < -25) | (rb.position.x >50) | (rb.position.y < -15) | (rb.position.y > 65)) {
+        // Destroy(gameObject);        }
     }
 
     void OnBecameInvisible()
 {
+    Debug.Log("invisible");
     // Destroy the bullet if it goes out of the camera's view
     //Destroy(rb);
      Destroy(gameObject);
