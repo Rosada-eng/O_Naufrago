@@ -16,7 +16,20 @@ public class UpdateWoodCollected : MonoBehaviour
 
     public void LateUpdate()
     {
-        UIText.text = player.GetComponent<PlayerController>().woodCollected.ToString();
-        // TODO: add / NEEDED TO COLLECT
+        int amountToCollect = player.GetComponent<GameEngine>().woodsToCollect;
+
+        if (amountToCollect == 0)
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.parent.gameObject.SetActive(true);
+            string textToShow = player.GetComponent<PlayerController>().woodCollected.ToString();
+            textToShow += " / ";
+            textToShow += player.GetComponent<GameEngine>().woodsToCollect.ToString();
+            UIText.text = textToShow;
+        }
+
     }
 }
