@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int fabricCollected = 0;
 
     public GameObject bulletPrefab; // assign your bullet prefab in the Inspector
+    public GameObject GameOverMenuUI;
     public float bullet_speed;
 
     Vector2 movementInput;
@@ -40,6 +41,12 @@ public class PlayerController : MonoBehaviour
             GetComponent<Animator>().SetBool("Andando", false);
         }
         Rotate();
+        if (healthPoints <= 0)
+        {
+            GameOverMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+
+        }
 }
 
     void OnMove(InputValue movementValue) {
@@ -51,7 +58,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Quaternion playerRotation = transform.rotation;
-        Vector3 offset = playerRotation * new Vector3(0.5f, -0.5f, 0f); // adjust the offset as needed
+        Vector3 offset = playerRotation * new Vector3(1f, -1f, 0f); // adjust the offset as needed
         Vector3 direction = mousePosition - (offset+ transform.position);
         direction.z = 0f;
         direction.Normalize();

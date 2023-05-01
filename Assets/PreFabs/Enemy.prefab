@@ -169,11 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6492bf9d092902b4b906cbd5bdd648fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
-  chasingSpeed: 0.7
+  speed: 1
+  chasingSpeed: 1
   walkingTime: 5
   idleTime: 10
-  minDistanceToChasePlayer: 10
+  minDistanceToChasePlayer: 50
   distanceToAttackPlayer: 5
   zombieHealthPoints: 10
   zombieDamage: 5

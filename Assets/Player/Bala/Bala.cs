@@ -25,4 +25,13 @@ public class Bala : MonoBehaviour
     //Destroy(rb);
      Destroy(gameObject);
 }
+
+ void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

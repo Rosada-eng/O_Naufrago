@@ -38,6 +38,7 @@ public class pause : MonoBehaviour
 
     public void press_restart(){
         Debug.Log("restart");
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
         }
 

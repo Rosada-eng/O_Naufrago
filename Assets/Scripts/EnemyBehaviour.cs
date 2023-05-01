@@ -165,4 +165,25 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
     }
+
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Bullet hit zombie2");
+            // Destroy the object that this script is attached to
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Zombie hit zombie");
+            // Destroy the object that this script is attached to
+            Destroy(gameObject);
+       }
+    }
+
+
+
 }

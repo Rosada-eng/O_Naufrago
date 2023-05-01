@@ -6,11 +6,16 @@ TagManager:
   tags:
   - Enemy
   - Food
+  - HPText
+  - WoodCollectedText
+  - RopeCollectedText
+  - FabricCollectedText
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - t
   - Water
   - UI
   - 
