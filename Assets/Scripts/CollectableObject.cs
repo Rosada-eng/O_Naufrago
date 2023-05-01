@@ -49,6 +49,6 @@ public class CollectableObject : MonoBehaviour
 
         audioSource.PlayOneShot(collectSound);
 
-        Invoke("DestroySelf", 0.2f);
+        Invoke("DestroySelf", 0.4f);
     }
 }
