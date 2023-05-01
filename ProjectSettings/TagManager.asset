@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Terrain
+    uniqueID: 3350029545
+    locked: 0
+  - name: Decoration
+    uniqueID: 4137358855
+    locked: 0
+  - name: Itens
+    uniqueID: 3171411933
+    locked: 0
+  - name: Unit
+    uniqueID: 1161065519
     locked: 0
