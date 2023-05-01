@@ -21,14 +21,32 @@ public class PlayerController : MonoBehaviour
     Vector2 movementInput;
     private Rigidbody2D rb;
 
+    public Boat boat;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         PlayerPrefs.DeleteAll();
 
+        boat = GameObject.FindGameObjectWithTag("Boat").GetComponent<Boat>();
+
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (!boat.isDiscovered)
+        {
+            float distanceToBoat = getDistanceToBoat();
+            if (distanceToBoat < 10f)
+            {
+                boat.isDiscovered = true;
+
+                // TODO: Adicionar frase de descoberta do barco na UI
+
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
 
@@ -90,5 +108,10 @@ public class PlayerController : MonoBehaviour
         {
             healthPoints += amount;
         }
+    }
+
+    public float getDistanceToBoat()
+    {
+        return Vector2.Distance(transform.position, boat.transform.position);
     }
 }

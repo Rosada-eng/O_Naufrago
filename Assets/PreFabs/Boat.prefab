@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4927782325211223536}
   m_Layer: 0
   m_Name: Boat
-  m_TagString: Untagged
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +102,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3133075db8e7cc3469aeec512430781d, type: 3}
   - {fileID: 21300000, guid: 6620f91dfd7f941488ccc3b9131f7c85, type: 3}
   - {fileID: 21300000, guid: 17a24db005172434194a5d0b962972b1, type: 3}
+  isAbleToTravel: 0
+  isDiscovered: 0
