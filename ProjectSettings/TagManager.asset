@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fabric
+  - Wood
+  - Food
+  - Rope
+  - Enemy
+  - HPText
+  - WoodCollectedText
+  - RopeCollectedText
+  - FabricCollectedText
   layers:
   - Default
   - TransparentFX
@@ -40,4 +49,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Terrain
+    uniqueID: 3946712511
+    locked: 0
+  - name: Detail
+    uniqueID: 1145827349
+    locked: 0
+  - name: Items
+    uniqueID: 3347351051
+    locked: 0
+  - name: Unit
+    uniqueID: 1505374937
     locked: 0
