@@ -6,9 +6,9 @@ public class GameEngine : MonoBehaviour
 {
     public int currentLevel = 1;
 
-    public int woodsToCollect;
-    public int ropesToCollect;
-    public int fabricsToCollect;
+    public int woodsToCollect = 0;
+    public int ropesToCollect = 0;
+    public int fabricsToCollect = 0;
 
     private Dictionary<int, Dictionary<string, int>> levels = new Dictionary<int, Dictionary<string, int>>()
     {
