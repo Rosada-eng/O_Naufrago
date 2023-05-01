@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: e49c0761851e9059b874f6e78f2503d1, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -197,15 +197,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7c069748e3c7b69002499c78fb89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linear_speed: 0
-  rotation_speed: 0
+  linear_speed: 10
+  rotation_speed: 3
   healthPoints: 80
   maxHealthPoints: 100
   woodCollected: 0
   ropeCollected: 0
   fabricCollected: 0
-  bulletPrefab: {fileID: 0}
-  bullet_speed: 0
+  bulletPrefab: {fileID: 5876092408251612597, guid: 712e8e3a06ea695b5baf2833297b5ebd, type: 3}
+  bullet_speed: 20
 --- !u!61 &2362083174546995008
 BoxCollider2D:
   m_ObjectHideFlags: 0
