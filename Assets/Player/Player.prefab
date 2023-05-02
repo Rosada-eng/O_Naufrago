@@ -206,6 +206,7 @@ MonoBehaviour:
   ropeCollected: 0
   fabricCollected: 0
   bulletPrefab: {fileID: 5876092408251612597, guid: 712e8e3a06ea695b5baf2833297b5ebd, type: 3}
+  GameOverMenuUI: {fileID: 0}
   bullet_speed: 20
 --- !u!61 &2362083174546995008
 BoxCollider2D:
@@ -262,7 +263,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169990919436609633}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b24d91b53f8056f458f879145fea85c1, type: 2}
   m_CullingMode: 0

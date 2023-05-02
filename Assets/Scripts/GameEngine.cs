@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEngine : MonoBehaviour
 {
-    public int currentLevel = 1;
+    public static int currentLevel = 1;
 
     public int woodsToCollect = 0;
     public int ropesToCollect = 0;
@@ -33,7 +34,7 @@ public class GameEngine : MonoBehaviour
     public void Start()
     {
         // TODO: TO DEBUG, CHOOSE YOUR LEVEL:
-        currentLevel = 3;
+        // currentLevel = 3;
         woodsToCollect = levels[currentLevel]["Wood"];
         ropesToCollect = levels[currentLevel]["Rope"];
         fabricsToCollect = levels[currentLevel]["Fabric"];
@@ -46,7 +47,36 @@ public class GameEngine : MonoBehaviour
         ropesToCollect = levels[currentLevel]["Rope"];
         fabricsToCollect = levels[currentLevel]["Fabric"];
 
-        // Alterar para Próxima Scene (Cutscene + New Map)
-        // SceneManager.LoadScene("Level" + currentLevel);
+        if (currentLevel > 3)
+        {
+            Victory();
+        }
+        else
+        {
+            // Alterar para Próxima Scene (Cutscene + New Map)
+            SceneManager.LoadScene("level" + currentLevel);
+
+            SelectNextBoat();
+        }
     }
+
+    public void SelectNextBoat()
+    {
+        gameObject.GetComponent<PlayerController>().findReferenceToBoat();
+    }
+
+    public void GameOver()
+    {
+        // Alterar para Scene de Game Over
+        // SceneManager.LoadScene("GameOver");
+
+    }
+
+    public void Victory()
+    {
+        // Alterar para Scene de Vitória
+        // SceneManager.LoadScene("Victory");
+    }
+
+
 }

@@ -26,11 +26,25 @@ public class PlayerController : MonoBehaviour
 
     private GameEngine gameEngine;
 
+    // void Awake()
+    // {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         PlayerPrefs.DeleteAll();
 
+        findReferenceToBoat();
+
+        gameEngine = GameObject.FindGameObjectWithTag("Player").GetComponent<GameEngine>();
+
+    }
+
+    public void findReferenceToBoat()
+    {
         GameObject[] boats = GameObject.FindGameObjectsWithTag("Boat");
         for (int i = 0; i < boats.Length; i++)
         {
@@ -40,11 +54,6 @@ public class PlayerController : MonoBehaviour
                 boat = boats[i].GetComponent<Boat>();
             }
         }
-
-        gameEngine = GameObject.FindGameObjectWithTag("Player").GetComponent<GameEngine>();
-
-
-
     }
 
     private void Update()
@@ -86,6 +95,12 @@ public class PlayerController : MonoBehaviour
                     repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Não tenho recursos suficientes para reparar o barco!\nPreciso procurar mais!");
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Apertou E");
+            gameEngine.GetComponent<GameEngine>().LevelUp();
         }
 
 
