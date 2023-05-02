@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private Boat boat;
 
+    private GameEngine gameEngine;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,47 +41,53 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        gameEngine = GameObject.FindGameObjectWithTag("Player").GetComponent<GameEngine>();
+
+
+
     }
 
     private void Update()
     {
         float distanceToBoat = getDistanceToBoat();
 
-        Debug.Log("distance to Boat:" + distanceToBoat.ToString());
         if (distanceToBoat < 10f)
         {
-            // if (!boat.isDiscovered)
-            // {
-            boat.isDiscovered = true;
-
-            Debug.Log("Barco encontrado!");
-
-            GameObject dialogBox = GameObject.FindGameObjectWithTag("DialogBox");
-            dialogBox.GetComponent<DialogBehaviour>().showMessage("Parece que isto aqui era um barco...\nEstá bastante averiguado, mas posso encontrar recursos pela ilha para consertá - lo!");
-
-            // }
-
-            GameObject repairDialogBox = GameObject.FindGameObjectWithTag("RepairText");
-            repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Tecle E para reparar");
-
-            // checks if player Press E
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!boat.isDiscovered)
             {
-                // if (woodCollected >= 3 && ropeCollected >= 2 && fabricCollected >= 1)
-                // {
-                GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("RepairText");
-                repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Reparando...");
+                boat.isDiscovered = true;
 
-                //     Invoke("RepairBoat", 3f);
-                // }
-                // else
-                // {
-                //     GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("RepairText");
-                //     repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Não tenho recursos suficientes para reparar o barco!");
-                // }
+                Debug.Log("Barco encontrado!");
+
+                GameObject dialogBox = GameObject.FindGameObjectWithTag("DialogBox");
+                dialogBox.GetComponent<DialogBehaviour>().showMessage("Parece que isto aqui era um barco...\nEstá bastante averiguado, mas posso encontrar recursos pela ilha para consertá - lo!");
+
             }
 
+            GameObject repairDialogBox = GameObject.FindGameObjectWithTag("RepairText");
+            repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Tecle E para reparar", 2f);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                int woodsNeeded = gameEngine.woodsToCollect;
+                int ropesNeeded = gameEngine.ropesToCollect;
+                int fabricsNeeded = gameEngine.fabricsToCollect;
+
+                if (woodCollected >= woodsNeeded && ropeCollected >= ropesNeeded && fabricCollected >= fabricsNeeded)
+                {
+                    GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("DialogBox");
+                    repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Reparando...", 3f);
+
+                    Invoke("RepairBoat", 4f);
+                }
+                else
+                {
+                    GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("DialogBox");
+                    repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Não tenho recursos suficientes para reparar o barco!\nPreciso procurar mais!");
+                }
+            }
         }
+
 
 
     }
@@ -156,5 +164,29 @@ public class PlayerController : MonoBehaviour
     public float getDistanceToBoat()
     {
         return Vector2.Distance(transform.position, boat.transform.position);
+    }
+
+    public void RepairBoat()
+    {
+        int woodsNeeded = gameEngine.woodsToCollect;
+        int ropesNeeded = gameEngine.ropesToCollect;
+        int fabricsNeeded = gameEngine.fabricsToCollect;
+
+        if (woodCollected >= woodsNeeded && ropeCollected >= ropesNeeded && fabricCollected >= fabricsNeeded)
+        {
+            // tocar som de reparo
+
+            woodCollected -= woodsNeeded;
+            ropeCollected -= ropesNeeded;
+            fabricCollected -= fabricsNeeded;
+
+            boat.isAbleToTravel = true;
+
+            GameObject repairDialogBox = GameObject.FindGameObjectWithTag("DialogBox");
+            repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Barco reparado!\nAgora posso viajar para casa!", 5f);
+
+            //TODO: Invoke Next Level
+        }
+
     }
 }

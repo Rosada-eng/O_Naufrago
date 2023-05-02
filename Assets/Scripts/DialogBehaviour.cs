@@ -12,13 +12,13 @@ public class DialogBehaviour : MonoBehaviour
         UIText.text = "";
 
     }
-    public void showMessage(string message)
+    public void showMessage(string message, float delay = 10f)
     {
         if (!isCalled)
         {
             isCalled = true;
             UIText.text = message;
-            Invoke("hideMessage", 10f);
+            Invoke("hideMessage", delay);
         }
 
     }
