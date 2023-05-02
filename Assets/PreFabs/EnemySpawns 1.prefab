@@ -67,7 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childrenStatus: 
-  spawnProbability: 0.25
+  spawnProbability: 0.45
+  type: 
 --- !u!1001 &461519458175815487
 PrefabInstance:
   m_ObjectHideFlags: 0

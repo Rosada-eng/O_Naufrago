@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     public GameObject GameOverMenuUI;
     public float bullet_speed;
 
+    public AudioClip shootSound;
+    private AudioSource audioSource;
+
+
     Vector2 movementInput;
     private Rigidbody2D rb;
 
@@ -35,6 +39,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+
         PlayerPrefs.DeleteAll();
 
         findReferenceToBoat();
@@ -138,6 +144,7 @@ public class PlayerController : MonoBehaviour
     void OnFire(InputValue clickValue)
     {
         GetComponent<Animator>().SetTrigger("Tiro");
+        audioSource.PlayOneShot(shootSound);
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Quaternion playerRotation = transform.rotation;
@@ -153,6 +160,9 @@ public class PlayerController : MonoBehaviour
         // Shoot the bullet in the direction of the mouse cursor
         Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
         bulletRigidbody.velocity = direction * bullet_speed;
+
+
+
     }
 
 

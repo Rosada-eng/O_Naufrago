@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    private int healthPoints = 3;
+
+    public int bulletDamage = 1;
     public float speed;
     public float chasingSpeed;
 
@@ -18,6 +21,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     // playlist of soundeffects
     public AudioClip[] zombieSounds;
+
+    public AudioClip shootHitSound;
     public AudioSource zombieAudioSource;
     public float zombieSoundCooldown = 5f;
 
@@ -170,17 +175,25 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Bullet hit zombie2");
-            // Destroy the object that this script is attached to
-            Destroy(gameObject);
+            zombieAudioSource.PlayOneShot(shootHitSound, .6f);
+            other.gameObject.SetActive(false);
+
+            healthDecrease(bulletDamage);
         }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Zombie hit zombie");
-            // Destroy the object that this script is attached to
-            Destroy(gameObject);
-        }
+
     }
 
-
+    private void healthDecrease(int damage)
+    {
+        healthPoints -= damage;
+        if (healthPoints <= 0)
+        {
+            DestroySelf();
+        }
+    }
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 
 }

@@ -190,6 +190,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9549f692e5cdbc8498e4a05dd0cafa44, type: 3}
   - {fileID: 8300000, guid: e6c701a882a901f41a93015a109d8f00, type: 3}
   - {fileID: 8300000, guid: ec940bd69238e8d45935b6ae3618c8e9, type: 3}
+  shootHitSound: {fileID: 8300000, guid: 19ea3f418ba3ae94f8796d325991a513, type: 3}
   zombieAudioSource: {fileID: 1963987423}
   zombieSoundCooldown: 5
 --- !u!82 &1963987423
