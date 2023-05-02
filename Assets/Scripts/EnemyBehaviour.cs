@@ -15,7 +15,6 @@ public class EnemyBehaviour : MonoBehaviour
     public float minDistanceToChasePlayer = 10f;
     public float distanceToAttackPlayer = 1f;
 
-    public int zombieHealthPoints = 10;
     public int zombieDamage = 5;
     public float attackCooldown = 2f;
 

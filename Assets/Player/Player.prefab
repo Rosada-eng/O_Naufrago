@@ -199,9 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7c069748e3c7b69002499c78fb89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linear_speed: 10
+  linear_speed: 8
   rotation_speed: 3
-  healthPoints: 80
+  healthPoints: 100
   maxHealthPoints: 100
   woodCollected: 0
   ropeCollected: 0
