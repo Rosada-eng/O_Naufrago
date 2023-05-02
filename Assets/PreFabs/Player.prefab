@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7c069748e3c7b69002499c78fb89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linear_speed: 5
+  linear_speed: 100
   rotation_speed: 1.62
   healthPoints: 80
   maxHealthPoints: 100
@@ -205,6 +205,7 @@ MonoBehaviour:
   ropeCollected: 0
   fabricCollected: 0
   bulletPrefab: {fileID: 5876092408251612597, guid: 8146be896793c8346ad6a9f6eb9f2cbb, type: 3}
+  GameOverMenuUI: {fileID: 0}
   bullet_speed: 0
 --- !u!61 &2362083174546995008
 BoxCollider2D:

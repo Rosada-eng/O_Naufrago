@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/abertura.unity
     guid: 0e79d82b189a659548c5a04b5ac75862
   - enabled: 1
-    path: Assets/Scenes/NewMap.unity
+    path: Assets/Scenes/MapMaker.unity
     guid: 8fc130ed6a0306748b7dd97bce8ec130
   m_configObjects: {}

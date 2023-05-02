@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int fabricCollected = 0;
 
     public GameObject bulletPrefab; // assign your bullet prefab in the Inspector
+    public GameObject GameOverMenuUI;
     public float bullet_speed;
 
     Vector2 movementInput;
@@ -62,7 +63,13 @@ public class PlayerController : MonoBehaviour
             GetComponent<Animator>().SetBool("Andando", false);
         }
         Rotate();
-    }
+        if (healthPoints <= 0)
+        {
+            GameOverMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+
+        }
+}
 
     void OnMove(InputValue movementValue)
     {
