@@ -68,7 +68,7 @@ public class GameEngine : MonoBehaviour
     public void GameOver()
     {
         // Alterar para Scene de Game Over
-        // SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
 
     }
 

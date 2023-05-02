@@ -66,6 +66,13 @@ public class PlayerController : MonoBehaviour
     {
         float distanceToBoat = getDistanceToBoat();
 
+        if (healthPoints <= 0)
+        {
+            // GameOverMenuUI.SetActive(true);
+            gameEngine.GetComponent<GameEngine>().GameOver();
+
+        }
+
         if (distanceToBoat < 10f)
         {
             if (!boat.isDiscovered)
@@ -103,9 +110,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            Debug.Log("Apertou E");
+            Debug.Log("Apertou G");
             gameEngine.GetComponent<GameEngine>().LevelUp();
         }
 
@@ -210,7 +217,7 @@ public class PlayerController : MonoBehaviour
             GameObject repairDialogBox = GameObject.FindGameObjectWithTag("DialogBox");
             repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Barco reparado!\nAgora posso viajar para casa!", 5f);
 
-            //TODO: Invoke Next Level
+            gameEngine.GetComponent<GameEngine>().LevelUp();
         }
 
     }
