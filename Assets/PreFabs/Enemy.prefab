@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  chasingSpeed: 1
+  chasingSpeed: 1.4
   walkingTime: 5
   idleTime: 10
   minDistanceToChasePlayer: 50

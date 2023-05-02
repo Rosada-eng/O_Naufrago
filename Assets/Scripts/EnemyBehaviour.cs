@@ -155,7 +155,6 @@ public class EnemyBehaviour : MonoBehaviour
             animator.SetBool("EnemyIsMoving", false);
             animator.SetTrigger("EnemyIsAttacking");
 
-            Debug.Log("Attacked! Player HP: " + target.GetComponent<PlayerController>().healthPoints);
             target.GetComponent<PlayerController>().healthPoints -= zombieDamage;
 
             int index = Random.Range(0, zombieSounds.Length);
@@ -179,7 +178,7 @@ public class EnemyBehaviour : MonoBehaviour
             Debug.Log("Zombie hit zombie");
             // Destroy the object that this script is attached to
             Destroy(gameObject);
-       }
+        }
     }
 
 

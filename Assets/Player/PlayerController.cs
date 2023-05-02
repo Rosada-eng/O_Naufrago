@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     Vector2 movementInput;
     private Rigidbody2D rb;
 
-    public Boat boat;
+    private Boat boat;
 
     void Start()
     {
@@ -53,6 +53,23 @@ public class PlayerController : MonoBehaviour
             GameObject repairDialogBox = GameObject.FindGameObjectWithTag("RepairText");
             repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Tecle E para reparar");
 
+            // checks if player Press E
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // if (woodCollected >= 3 && ropeCollected >= 2 && fabricCollected >= 1)
+                // {
+                GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("RepairText");
+                repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Reparando...");
+
+                //     Invoke("RepairBoat", 3f);
+                // }
+                // else
+                // {
+                //     GameObject repairDialogBox2 = GameObject.FindGameObjectWithTag("RepairText");
+                //     repairDialogBox2.GetComponent<DialogBehaviour>().showMessage("Não tenho recursos suficientes para reparar o barco!");
+                // }
+            }
+
         }
 
 
@@ -79,7 +96,7 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0f;
 
         }
-}
+    }
 
     void OnMove(InputValue movementValue)
     {

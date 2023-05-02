@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class DialogBehaviour : MonoBehaviour
 {
-    public TextMeshProUGUI UIText;
+    private TextMeshProUGUI UIText;
     private bool isCalled = false;
     void Start()
     {
