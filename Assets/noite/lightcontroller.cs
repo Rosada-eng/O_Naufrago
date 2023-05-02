@@ -13,7 +13,7 @@ public class lightcontroller : MonoBehaviour {
 
     private float currentIntensity; // current intensity of the lights
     private float timeSinceCycleStart; // time elapsed since the start of the current cycle
-
+    public bool isDay = true;
     private void Start() {
         light2D = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         currentIntensity = 1f; // initialize current intensity to 1.0f
@@ -38,18 +38,22 @@ public class lightcontroller : MonoBehaviour {
         float targetIntensity;
         if (timeOfDay < sunriseDuration / cycleDuration || timeOfDay >= (1f - sunsetDuration / cycleDuration)) {
             // full day
+            isDay = true;
             float dayProgress = (timeOfDay < sunriseDuration / cycleDuration) ? (timeOfDay / (sunriseDuration / cycleDuration)) : ((timeOfDay - (1f - sunsetDuration / cycleDuration)) / (sunsetDuration / cycleDuration));
             targetIntensity = Mathf.Lerp(0.25f, 1f, dayProgress);
         } else if (timeOfDay >= sunriseDuration / cycleDuration && timeOfDay < (sunriseDuration + sunsetDuration) / cycleDuration) {
             // sunrise transition
+            isDay = true;
             float transitionProgress = (timeOfDay - sunriseDuration / cycleDuration) / (sunsetDuration / cycleDuration);
             targetIntensity = Mathf.Lerp(0.25f, 1f, transitionProgress);
         } else if (timeOfDay >= (1f - sunsetDuration / cycleDuration) && timeOfDay < 1f) {
             // sunset transition
+            isDay = false;
             float transitionProgress = (timeOfDay - (1f - sunsetDuration / cycleDuration)) / (sunsetDuration / cycleDuration);
             targetIntensity = Mathf.Lerp(1f, 0.25f, transitionProgress);
         } else {
             // full night
+            isDay = false;
             float nightProgress = ((timeOfDay - (sunriseDuration + sunsetDuration) / cycleDuration) / (nightDuration / cycleDuration));
             targetIntensity = Mathf.Lerp(1f, 0.25f, nightProgress);
         }
