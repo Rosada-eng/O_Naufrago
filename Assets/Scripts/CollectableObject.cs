@@ -15,7 +15,7 @@ public class CollectableObject : MonoBehaviour
     private bool isBoatDiscovered = false;
     private GameObject boat;
 
-    void Awake()
+    void Start()
     {
         player = GameObject.FindWithTag("Player");
 

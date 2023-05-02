@@ -29,7 +29,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         PlayerPrefs.DeleteAll();
 
-        boat = GameObject.FindGameObjectWithTag("Boat").GetComponent<Boat>();
+        GameObject[] boats = GameObject.FindGameObjectsWithTag("Boat");
+        for (int i = 0; i < boats.Length; i++)
+        {
+            if (boats[i].activeSelf)
+            {
+                Debug.Log("Barco " + i + " está ativo");
+                boat = boats[i].GetComponent<Boat>();
+            }
+        }
 
     }
 
@@ -37,18 +45,19 @@ public class PlayerController : MonoBehaviour
     {
         float distanceToBoat = getDistanceToBoat();
 
+        Debug.Log("distance to Boat:" + distanceToBoat.ToString());
         if (distanceToBoat < 10f)
         {
-            if (!boat.isDiscovered)
-            {
-                boat.isDiscovered = true;
+            // if (!boat.isDiscovered)
+            // {
+            boat.isDiscovered = true;
 
-                Debug.Log("Barco encontrado!");
+            Debug.Log("Barco encontrado!");
 
-                GameObject dialogBox = GameObject.FindGameObjectWithTag("DialogBox");
-                dialogBox.GetComponent<DialogBehaviour>().showMessage("Parece que isto aqui era um barco...\nEstá bastante averiguado, mas posso encontrar recursos pela ilha para consertá - lo!");
+            GameObject dialogBox = GameObject.FindGameObjectWithTag("DialogBox");
+            dialogBox.GetComponent<DialogBehaviour>().showMessage("Parece que isto aqui era um barco...\nEstá bastante averiguado, mas posso encontrar recursos pela ilha para consertá - lo!");
 
-            }
+            // }
 
             GameObject repairDialogBox = GameObject.FindGameObjectWithTag("RepairText");
             repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Tecle E para reparar");

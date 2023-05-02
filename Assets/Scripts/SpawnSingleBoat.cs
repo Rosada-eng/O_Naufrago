@@ -6,7 +6,7 @@ public class SpawnSingleBoat : MonoBehaviour
 {
     private int totalChildren;
 
-    void Start()
+    void Awake()
     {
         totalChildren = transform.childCount;
         int random = Random.Range(0, totalChildren);
