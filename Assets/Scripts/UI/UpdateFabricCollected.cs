@@ -17,7 +17,19 @@ public class UpdateFabricCollected : MonoBehaviour
 
     public void LateUpdate()
     {
-        UIText.text = player.GetComponent<PlayerController>().fabricCollected.ToString();
-        // TODO: add / NEEDED TO COLLECT
+        int amountToCollect = player.GetComponent<GameEngine>().fabricsToCollect;
+
+        if (amountToCollect == 0)
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.parent.gameObject.SetActive(true);
+            string textToShow = player.GetComponent<PlayerController>().fabricCollected.ToString();
+            textToShow += " / ";
+            textToShow += player.GetComponent<GameEngine>().fabricsToCollect.ToString();
+            UIText.text = textToShow;
+        }
     }
 }

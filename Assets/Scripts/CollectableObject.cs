@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollectableObject : MonoBehaviour
 {
     private GameObject player;
+
+    private GameEngine gameEngine;
     private string collectableType;
 
     private AudioSource audioSource;
@@ -14,10 +16,34 @@ public class CollectableObject : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        collectableType = gameObject.tag;
+
         audioSource = GetComponent<AudioSource>();
+
+        collectableType = gameObject.tag;
+
+        gameEngine = player.GetComponent<GameEngine>();
+
     }
 
+    public void Update()
+    {
+        if (collectableType == "Wood" && gameEngine.woodsToCollect == 0)
+        {
+            gameObject.SetActive(false);
+        }
+        else if (collectableType == "Rope" && gameEngine.ropesToCollect == 0)
+        {
+            gameObject.SetActive(false);
+        }
+        else if (collectableType == "Fabric" && gameEngine.fabricsToCollect == 0)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
     private void DestroySelf()
     {
         Destroy(gameObject);
@@ -49,6 +75,6 @@ public class CollectableObject : MonoBehaviour
 
         audioSource.PlayOneShot(collectSound);
 
-        Invoke("DestroySelf", 0.2f);
+        Invoke("DestroySelf", 0.4f);
     }
 }

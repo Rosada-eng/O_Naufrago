@@ -6,9 +6,11 @@ public class CollectableSprite : MonoBehaviour
 {
     public Sprite[] sprites;
 
-    public void Awake() {
+    public void Awake()
+    {
         int index = Random.Range(0, sprites.Length);
         GetComponent<SpriteRenderer>().sprite = sprites[index];
+
     }
 
 }

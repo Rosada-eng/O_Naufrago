@@ -7,6 +7,10 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     public Sprite[] sprites;
 
+    public bool isAbleToTravel = false;
+    public bool isDiscovered = false;
+
+
     // TODO: Change sprite when is able to travel (fixed)
 
     void Start()

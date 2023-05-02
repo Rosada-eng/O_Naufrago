@@ -33,9 +33,4 @@ public class SpawnEntity : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

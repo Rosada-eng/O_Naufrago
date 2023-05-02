@@ -16,7 +16,19 @@ public class UpdateRopeCollected : MonoBehaviour
 
     public void LateUpdate()
     {
-        UIText.text = player.GetComponent<PlayerController>().ropeCollected.ToString();
-        // TODO: add / NEEDED TO COLLECT
+        int amountToCollect = player.GetComponent<GameEngine>().ropesToCollect;
+
+        if (amountToCollect == 0)
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.parent.gameObject.SetActive(true);
+            string textToShow = player.GetComponent<PlayerController>().ropeCollected.ToString();
+            textToShow += " / ";
+            textToShow += player.GetComponent<GameEngine>().ropesToCollect.ToString();
+            UIText.text = textToShow;
+        }
     }
 }
