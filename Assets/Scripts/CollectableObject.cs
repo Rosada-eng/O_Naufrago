@@ -12,6 +12,8 @@ public class CollectableObject : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip collectSound;
 
+    private bool isBoatDiscovered = false;
+    private GameObject boat;
 
     void Awake()
     {
@@ -22,11 +24,15 @@ public class CollectableObject : MonoBehaviour
         collectableType = gameObject.tag;
 
         gameEngine = player.GetComponent<GameEngine>();
+        boat = GameObject.FindWithTag("Boat");
 
     }
 
     public void Update()
     {
+        isBoatDiscovered = boat.GetComponent<Boat>().isDiscovered;
+
+
         if (collectableType == "Wood" && gameEngine.woodsToCollect == 0)
         {
             gameObject.SetActive(false);

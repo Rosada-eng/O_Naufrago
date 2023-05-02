@@ -34,17 +34,27 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!boat.isDiscovered)
+        float distanceToBoat = getDistanceToBoat();
+
+        if (distanceToBoat < 10f)
         {
-            float distanceToBoat = getDistanceToBoat();
-            if (distanceToBoat < 10f)
+            if (!boat.isDiscovered)
             {
                 boat.isDiscovered = true;
 
-                // TODO: Adicionar frase de descoberta do barco na UI
+                Debug.Log("Barco encontrado!");
+
+                GameObject dialogBox = GameObject.FindGameObjectWithTag("DialogBox");
+                dialogBox.GetComponent<DialogBehaviour>().showMessage("Parece que isto aqui era um barco...\nEstá bastante averiguado, mas posso encontrar recursos pela ilha para consertá - lo!");
 
             }
+
+            GameObject repairDialogBox = GameObject.FindGameObjectWithTag("RepairText");
+            repairDialogBox.GetComponent<DialogBehaviour>().showMessage("Tecle E para reparar");
+
         }
+
+
     }
 
     private void FixedUpdate()

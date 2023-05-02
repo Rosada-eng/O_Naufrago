@@ -33,7 +33,7 @@ public class GameEngine : MonoBehaviour
     public void Start()
     {
         // TODO: TO DEBUG, CHOOSE YOUR LEVEL:
-        currentLevel = 2;
+        // currentLevel = 2;
         woodsToCollect = levels[currentLevel]["Wood"];
         ropesToCollect = levels[currentLevel]["Rope"];
         fabricsToCollect = levels[currentLevel]["Fabric"];

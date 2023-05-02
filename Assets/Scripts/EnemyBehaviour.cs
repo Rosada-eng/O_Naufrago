@@ -53,8 +53,6 @@ public class EnemyBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        target = GameObject.FindWithTag("Player");
-
         initialTime = Time.time;
         waitTime = walkingTime;
 
