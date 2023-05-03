@@ -54,7 +54,14 @@ public class GameEngine : MonoBehaviour
         else
         {
             // Alterar para Próxima Scene (Cutscene + New Map)
-            SceneManager.LoadScene("level" + currentLevel);
+            if (currentLevel == 2)
+            {
+                SceneManager.LoadScene(2);
+            }
+            else if (currentLevel == 3)
+            {
+                SceneManager.LoadScene(4);
+            }
 
             SelectNextBoat();
         }
