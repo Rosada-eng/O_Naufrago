@@ -42,29 +42,19 @@ public class GameEngine : MonoBehaviour
 
     public void LevelUp()
     {
+        currentLevel += 1;
+        woodsToCollect = levels[currentLevel]["Wood"];
+        ropesToCollect = levels[currentLevel]["Rope"];
+        fabricsToCollect = levels[currentLevel]["Fabric"];
 
-
-
-        if (currentLevel + 1 > 3)
+        if (currentLevel > 3)
         {
             Victory();
-
         }
         else
         {
-            currentLevel += 1;
-            woodsToCollect = levels[currentLevel]["Wood"];
-            ropesToCollect = levels[currentLevel]["Rope"];
-            fabricsToCollect = levels[currentLevel]["Fabric"];
             // Alterar para Próxima Scene (Cutscene + New Map)
-            if (currentLevel == 2)
-            {
-                SceneManager.LoadScene(2);
-            }
-            else if (currentLevel == 3)
-            {
-                SceneManager.LoadScene(4);
-            }
+            SceneManager.LoadScene("level" + currentLevel);
 
             SelectNextBoat();
         }
@@ -85,18 +75,7 @@ public class GameEngine : MonoBehaviour
     public void Victory()
     {
         // Alterar para Scene de Vitória
-        SceneManager.LoadScene("GameWinner");
-    }
-
-    public void Restart()
-    {
-        currentLevel = 1;
-        SceneManager.LoadScene("level" + currentLevel);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
+        // SceneManager.LoadScene("Victory");
     }
 
 

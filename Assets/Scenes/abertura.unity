@@ -1139,10 +1139,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O destino te trouxe, agora s\xF3 resta fugir, ou morrer tentando. \nCom
-    poucos recursos e em um lugar desconhecido, voc\xEA precisar\xE1 usar sua coragem
-    e instintos para explorar a ilha e encontrar uma maneira de sobreviver. E a \xFAnica
-    sa\xEDda parece ser o mar.\nProcure e Concerte o barco,  Boa sorte!"
+  m_text: "O destino te colocou aqui, agora so\xF3 resta fugir, ou morrer tentando.
+    \nCom poucos recursos e em um lugar desconhecido, voc\xEA precisar\xE1 usar sua
+    coragem e instintos para explorar a ilha e encontrar uma maneira de sobreviver\nE
+    a \xFAnica sa\xEDda parece ser o mar. Boa sorte!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

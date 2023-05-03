@@ -75,10 +75,3 @@ public class start : MonoBehaviour
         }
 }
 
-// Bem-vindo ao Arquipélago Sombrio, sobrevivente! 
-// Você está prestes a embarcar em uma jornada emocionante e perigosa. 
-// Rumores dizem que coisas estranhas acontecem nesta ilha aparentemente desabitada,
-// Mas seu avião passou por uma pane e você foi forçado a abandoná-lo, acionando seu paraquedas.
-// O destino te colocou aqui, agora soó resta fugir, ou morrer tentando. 
-// Com poucos recursos e em um lugar desconhecido, você precisará usar sua coragem e instintos para explorar a ilha e encontrar uma maneira de sobreviver
-// E a única saída parece ser o mar. Boa sorte!

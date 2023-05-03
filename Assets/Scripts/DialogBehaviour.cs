@@ -4,9 +4,8 @@ using UnityEngine;
 using TMPro;
 public class DialogBehaviour : MonoBehaviour
 {
-    private TextMeshProUGUI UIText;
+    public TextMeshProUGUI UIText;
     private bool isCalled = false;
-
     void Start()
     {
         UIText = GetComponent<TextMeshProUGUI>();

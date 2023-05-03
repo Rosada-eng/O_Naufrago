@@ -30,11 +30,10 @@ public class PlayerController : MonoBehaviour
 
     private GameEngine gameEngine;
 
-    void Awake()
-    {
-        // DontDestroyOnLoad(this.gameObject);
-        findSpawnPosition();
-    }
+    // void Awake()
+    // {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
 
 
     void Start()
@@ -47,10 +46,6 @@ public class PlayerController : MonoBehaviour
         findReferenceToBoat();
 
         gameEngine = GameObject.FindGameObjectWithTag("Player").GetComponent<GameEngine>();
-
-
-        // if currentLevel > 1, player spawns in the bay
-
 
     }
 
@@ -224,15 +219,6 @@ public class PlayerController : MonoBehaviour
 
             gameEngine.GetComponent<GameEngine>().LevelUp();
         }
-
-    }
-
-    public void findSpawnPosition()
-    {
-        // move player to a random spawn position
-        GameObject[] spawnPositions = GameObject.FindGameObjectsWithTag("SpawnPosition");
-        int randomIndex = Random.Range(0, spawnPositions.Length);
-        transform.position = spawnPositions[randomIndex].transform.position;
 
     }
 }

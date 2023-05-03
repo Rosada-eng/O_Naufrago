@@ -414,6 +414,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5995432154455725724, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 369986509}
+    - target: {fileID: 5995432154455725724, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5995432154455725725, guid: 583e163045eea96188f55f10ec699a43, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -502,5 +510,27 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 2049652632}
+    - target: {fileID: 8714126591051658923, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_text
+      value: 'Essa foi por pouco, mas  infelizmente para escapar, sera necessrio
+        mais do que isso.
+
+        Na proxima ilha voce encontrara mais suprimentos
+        para melhorar o barco
+
+        Afinal, essa jangad nao aguentaria o atlantico'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714126591051658923, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714126591051658924, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714126591051658924, guid: 583e163045eea96188f55f10ec699a43, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583e163045eea96188f55f10ec699a43, type: 3}
