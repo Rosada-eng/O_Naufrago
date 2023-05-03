@@ -11,6 +11,13 @@ TagManager:
   - RopeCollectedText
   - FabricCollectedText
   - Bullet
+  - Fabric
+  - Boat
+  - RepairText
+  - DialogBox
+  - Rope
+  - Wood
+  - SpawnPosition
   layers:
   - Default
   - TransparentFX

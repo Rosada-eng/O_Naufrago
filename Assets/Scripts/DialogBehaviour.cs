@@ -6,6 +6,7 @@ public class DialogBehaviour : MonoBehaviour
 {
     private TextMeshProUGUI UIText;
     private bool isCalled = false;
+
     void Start()
     {
         UIText = GetComponent<TextMeshProUGUI>();
