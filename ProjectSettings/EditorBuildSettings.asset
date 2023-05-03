@@ -8,13 +8,29 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/abertura.unity
-    guid: 0e79d82b189a659548c5a04b5ac75862
   - enabled: 0
     path: Assets/Scenes/MapMaker.unity
     guid: 8fc130ed6a0306748b7dd97bce8ec130
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level.unity
     guid: 8a774fe521896bb47b8de14f468ad380
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/abertura.unity
+    guid: 0e79d82b189a659548c5a04b5ac75862
+  - enabled: 1
+    path: Assets/Scenes/level1.unity
+    guid: 43c887e47f77d57828a030112e6757a2
+  - enabled: 1
+    path: Assets/Scenes/cut1.unity
+    guid: 7ae1f6c47a1eb27a19ac2cab37e97882
+  - enabled: 1
+    path: Assets/Scenes/level2.unity
+    guid: 4b646e0a09f786cc58d2035c76193744
+  - enabled: 1
+    path: Assets/Scenes/cut2.unity
+    guid: 8efa0cf48eb87d6219f7d628163e149e
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: bbca236d21dd92957b9873d1f1bd715c
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: d36d26cd68c43e5dc8d8cc3e2e3cb58a, type: 2}
